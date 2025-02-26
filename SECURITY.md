@@ -1,4 +1,3 @@
-
 No permissions are granted to use, modify, or share any part of this project.
 
 Unauthorized use or reproduction of this content is strictly prohibited.
