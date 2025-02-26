@@ -1,0 +1,40 @@
+============================== prooftrans ============================
+Prover9 (32) version Dec-2007, Dec 2007.
+Process 82568 was started by saikr on Sai_ak,
+Tue Dec 10 21:44:22 2024
+The command was "/cygdrive/c/Program Files (x86)/Prover9-Mace4/bin-win32/prover9".
+============================== end of head ===========================
+
+============================== end of input ==========================
+
+============================== PROOF =================================
+
+% -------- Comments from original proof --------
+% Proof 1 at 0.00 (+ 0.01) seconds.
+% Length of proof is 20.
+% Level of proof is 6.
+% Maximum clause weight is 0.
+% Given clauses 0.
+
+1 -Loon(x) | Eats(x,fish) # label(non_clause) # label(goal).  [goal].
+2 -Loon(x) | Bird(x).  [assumption].
+4 -Bird(x) | SleepsIn(x,f1(x)).  [assumption].
+5 Loon(c1).  [deny(1)].
+6 -Loon(x) | Aquatic(x).  [assumption].
+8 -Loon(x) | SleepsIn(x,f1(x)).  [resolve(2,b,4,a)].
+9 Aquatic(c1).  [resolve(5,a,6,a)].
+10 -Aquatic(x) | -SleepsIn(x,y) | Lake(f2(x,y)).  [assumption].
+11 -Aquatic(x) | -SleepsIn(x,y) | Beside(y,f2(x,y)).  [assumption].
+12 SleepsIn(c1,f1(c1)).  [resolve(8,a,5,a)].
+13 -SleepsIn(x,y) | -Beside(y,z) | -Lake(z) | Eats(x,fish).  [assumption].
+14 -SleepsIn(c1,x) | Lake(f2(c1,x)).  [resolve(9,a,10,a)].
+15 -SleepsIn(c1,x) | Beside(x,f2(c1,x)).  [resolve(9,a,11,a)].
+16 -Beside(f1(c1),x) | -Lake(x) | Eats(c1,fish).  [resolve(12,a,13,a)].
+17 -Eats(c1,fish).  [deny(1)].
+18 -Beside(f1(c1),x) | -Lake(x).  [resolve(16,c,17,a)].
+19 Lake(f2(c1,f1(c1))).  [resolve(14,a,12,a)].
+20 -Beside(f1(c1),f2(c1,f1(c1))).  [resolve(18,b,19,a)].
+21 Beside(f1(c1),f2(c1,f1(c1))).  [resolve(15,a,12,a)].
+22 $F.  [resolve(20,a,21,a)].
+
+============================== end of proof ==========================

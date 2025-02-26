@@ -1,0 +1,29 @@
+============================== prooftrans ============================
+Prover9 (32) version Dec-2007, Dec 2007.
+Process 56404 was started by saikr on Sai_ak,
+Tue Dec 10 21:42:41 2024
+The command was "/cygdrive/c/Program Files (x86)/Prover9-Mace4/bin-win32/prover9".
+============================== end of head ===========================
+
+============================== end of input ==========================
+
+============================== PROOF =================================
+
+% -------- Comments from original proof --------
+% Proof 1 at 0.00 (+ 0.00) seconds.
+% Length of proof is 9.
+% Level of proof is 3.
+% Maximum clause weight is 0.
+% Given clauses 0.
+
+1 Eats(max,bone) # label(non_clause) # label(goal).  [goal].
+2 Dog(max).  [assumption].
+3 -Dog(x) | Likes(x,bone).  [assumption].
+4 -Dog(x) | -Likes(x,y) | Eats(x,y).  [assumption].
+5 -Likes(max,x) | Eats(max,x).  [resolve(2,a,4,a)].
+6 -Eats(max,bone).  [deny(1)].
+7 -Likes(max,bone).  [resolve(5,b,6,a)].
+8 Likes(max,bone).  [resolve(2,a,3,a)].
+9 $F.  [resolve(7,a,8,a)].
+
+============================== end of proof ==========================
